@@ -37,9 +37,9 @@ int main(int argc, char const *argv[])
         s3.name="Raghav";
         s3.gpa=7.3;
         s3.rno=18;
-    Student s4=s3;
+    Student s4=s3;//deep copy
         s4.name="Piyush";
-    Student s5(s1);
+    Student s5(s1);//copy constructor-deep copy
         s5.name="Tannu";
     print(s1);
     print(s2);
