@@ -23,6 +23,43 @@ Node* cnvrtarr2ll(vector<int> &arr){
             cout<<endl;
             return head;
         }
+
+Node* deleteHead(Node* head){
+    if(head==NULL) return head;
+    Node* temp=head;
+    head=head->next;
+    delete temp;
+    temp=NULL; 
+    return head;
+}
+
+Node* removeel(Node* head,int x){
+    Node* temp=head;
+    Node* prevtemp=NULL;
+    if(head==NULL)return NULL;
+    while(temp){
+        if(temp->data==x){
+            prevtemp->next=temp->next;
+            delete temp;
+            break;
+        }
+        prevtemp=temp;
+        temp=temp->next;
+    }
+    return head;
+}
+
+Node* deletetail(Node* head){
+    Node* temp=head; 
+    if(temp==NULL || temp->next==NULL)return NULL;
+    while(temp->next->next!=NULL){
+        temp=temp->next;
+    }
+    delete temp->next;
+    temp->next=NULL;
+    return head;
+
+}
 int main(){
         
         vector<int> arr={12,3,2,4,5};
